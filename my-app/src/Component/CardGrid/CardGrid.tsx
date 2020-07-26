@@ -19,7 +19,7 @@ function CardGrid(props: ICardGridProps){
 
 
     useEffect(() => {
-        fetch('http://api.openweathermap.org/data/2.5/weather?q=' + props.SearchQuery + '&appid=' + '23fce8b17a0f886b6185b21d15b80091')
+        fetch('http://api.openweathermap.org/data/2.5/weather?q=' + props.SearchQuery + '&appid=')
             .then(response => response.json())
             .then(response => {
                 setItem({icon: response.weather[0].icon, main: response.weather[0].main, description: response.weather[0].description, temp: response.main.temp})
@@ -33,7 +33,7 @@ function CardGrid(props: ICardGridProps){
         <div>
             
             <Grid item className = 'CardGridItem'>
-                <WeatherCard IconUrl={'http://openweathermap.org/img/wn/' +Item['icon'] + '@2x.png'} City={props.SearchQuery} Main={Item['main']} Description={Item['description']} Temp={Item['temp']}/>
+                <WeatherCard IconUrl={'http://openweathermap.org/img/wn/10n@2x.png'} City={props.SearchQuery} Main={"Rain"} Description={"moderately rain"} Temp={"289"}/>
             </Grid>
         </div>
     )
